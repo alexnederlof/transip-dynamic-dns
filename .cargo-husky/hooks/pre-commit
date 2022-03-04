@@ -1,0 +1,4 @@
+set -e
+cargo fmt # cargo fmt -- --check
+cargo clippy --fix --allow-dirty --allow-staged # cargo clippy -- -D warnings
+cargo fix --allow-staged --allow-dirty 
