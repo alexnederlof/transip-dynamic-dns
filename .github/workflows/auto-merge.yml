@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
+        name: auto-merge
         with:
           target: minor
           github-token: ${{ secrets.mytoken }}
