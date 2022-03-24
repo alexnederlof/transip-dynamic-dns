@@ -27,5 +27,5 @@ folder, you can run
 docker run \
     -v $PWD/.env:/app/.env \
     -v $PWD/transip.key:/app/transip.key \
-    alexnederlof/transip-dynamic-dns
+    ghcr.io/alexnederlof/transip-dynamic-dns
 ```
