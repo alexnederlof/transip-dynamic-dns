@@ -9,12 +9,14 @@ extern crate sha2;
 extern crate simplelog;
 use dotenv::dotenv;
 
+use log::info;
 use openssl::pkey::PKey;
 use simple_error::{SimpleError, SimpleResult};
 use simplelog::{Config, LevelFilter, TermLogger, TerminalMode};
 use std::env;
 use std::fs::File;
 use std::io::Read;
+
 mod get_ip;
 mod transip;
 
@@ -54,7 +56,7 @@ fn get_env_or_error(name: &str) -> SimpleResult<String> {
 }
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+async fn main() -> () {
     println!("Updating IP");
     dotenv().ok();
     TermLogger::init(
@@ -67,6 +69,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 
     let config = AppConfig::new().unwrap();
     let api = transip::TransIp::new(config);
-    api.update_ip_for_address().await?;
-    Ok(())
+    let changed = api
+        .update_ip_for_address()
+        .await
+        .expect("Failed to update IP");
+    info!("IP update complete. Updated = {:}", changed);
 }

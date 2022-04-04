@@ -38,7 +38,7 @@ impl TransIp {
         TransIp { config }
     }
 
-    pub async fn update_ip_for_address(&self) -> Result<(), String> {
+    pub async fn update_ip_for_address(&self) -> Result<bool, String> {
         let client = Client::new();
         let ip = get_ip().await?;
         let token = self.get_token(&client).await?;
@@ -58,10 +58,11 @@ impl TransIp {
                 ..mine
             };
             self.patch_record(&token, &client, &new_record).await?;
+            return Ok(true)
         } else {
             info!("External IP {:?} matches record {:?}", ip, mine.content);
+            return Ok(false)
         }
-        Ok(())
     }
     pub async fn patch_record(
         &self,

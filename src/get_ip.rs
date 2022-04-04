@@ -35,7 +35,7 @@ const IP_SOURCES: [&str; 9] = [
     "https://ident.me/",
     "http://whatismyip.akamai.com/",
     "https://myip.dnsomatic.com/",
-    "https://diagnostic.opendns.com/myip",
+    // "https://diagnostic.opendns.com/myip",
 ];
 
 pub async fn get_ip() -> Result<String, String> {
