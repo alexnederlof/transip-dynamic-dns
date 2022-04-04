@@ -26,7 +26,7 @@ pub struct DnsEntries {
     pub entries: Vec<DnsEntry>,
 }
 
-const IP_SOURCES: [&str; 9] = [
+const IP_SOURCES: [&str; 8] = [
     "https://icanhazip.com/",
     "https://myexternalip.com/raw",
     "https://ifconfig.io/ip",
