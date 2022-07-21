@@ -5,8 +5,8 @@ authors = ["Alex Nederlof <alex@nederlof.com>"]
 edition = "2021"
 
 [dependencies]
-serde = { version = "1.0.137", features = ["derive"] }
-serde_json = "1.0.81"
+serde = { version = "1.0.140", features = ["derive"] }
+serde_json = "1.0.82"
 log = "0.4.17"
 jwt = "0.16.0"
 hmac = "0.12.1"
@@ -14,9 +14,9 @@ sha2 = "0.10.2"
 crypto-mac = "0.11.1"
 chrono = "0.4.19"
 reqwest = { version = "0.11.11", features = ["json"] }
-tokio = { version = "1.19.2", features = ["full"] }
+tokio = { version = "1.20.0", features = ["full"] }
 simplelog = "0.12.0"
-openssl = "0.10.40"
+openssl = "0.10.41"
 chrono-tz = "0.6.1"
 simple-error = "0.2.3"
 dotenv = "0.15.0"

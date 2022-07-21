@@ -56,7 +56,7 @@ fn get_env_or_error(name: &str) -> SimpleResult<String> {
 }
 
 #[tokio::main]
-async fn main() -> () {
+async fn main() {
     println!("Updating IP");
     dotenv().ok();
     TermLogger::init(

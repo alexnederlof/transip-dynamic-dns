@@ -58,10 +58,10 @@ impl TransIp {
                 ..mine
             };
             self.patch_record(&token, &client, &new_record).await?;
-            return Ok(true)
+            Ok(true)
         } else {
             info!("External IP {:?} matches record {:?}", ip, mine.content);
-            return Ok(false)
+            Ok(false)
         }
     }
     pub async fn patch_record(
