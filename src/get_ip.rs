@@ -6,12 +6,12 @@ use std::sync::{Arc, Mutex};
 
 use tokio::task::JoinHandle;
 
-#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct TokenResponse {
     token: String,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct DnsEntry {
     name: String,
     expire: u32,
@@ -20,7 +20,7 @@ pub struct DnsEntry {
     content: String,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct DnsEntries {
     #[serde(rename = "dnsEntries")]
     pub entries: Vec<DnsEntry>,
