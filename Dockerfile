@@ -1,4 +1,4 @@
-FROM rust:1.66.0 AS chef
+FROM rust:1.67.0 AS chef
 RUN cargo install cargo-chef
 
 FROM chef AS planner
