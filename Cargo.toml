@@ -16,7 +16,7 @@ chrono = "0.4.26"
 reqwest = { version = "0.11.18", features = ["json"] }
 tokio = { version = "1.28.2", features = ["full"] }
 simplelog = "0.12.1"
-openssl = "0.10.53"
+openssl = "0.10.54"
 chrono-tz = "0.8.2"
 simple-error = "0.3.0"
 dotenv = "0.15.0"
